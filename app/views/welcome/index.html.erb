@@ -1,0 +1,38 @@
+<h1>Welcome to my travel site</h1>
+<p>This is my very awesome travel site</p>
+<%= @homeland %>
+<ul>
+<% @countries.each do |country| %>
+  <li><%= country %></li>
+<% end %>
+</ul>
+<div id="map-canvas"></div>
+
+<%= image_tag "chile_withflag.jpg", alt: "flag", id: "country", class: "chi cho img-responsive" %>
+<%= image_tag "123.png", alt: "yo", class: "chi cho img-responsive" %>
+<%= image_tag "Calendar-week.jpg", alt: "ya", class: "chi cho img-responsive" %>
+
+<!--
+<p>
+  <% @my_images.each do |img| %>
+    <%= image_tag img, class:"chi cho" %>
+  <% end %>
+</p>
+-->
+
+<table class="table">
+  <tr>
+  <% @united_states.each do |key, value| %>
+    <th><%= key.titleize %></th>
+  <% end %>
+  </tr>
+  <tr>
+    <% @united_states.each do |key, value| %>
+      <% if value.kind_of?(Array) %>
+        <td><%= value.join(', ') %></td>
+      <% else %>
+        <td><%= value %></td>
+      <% end %>
+    <% end %>
+  </tr>
+</table>
